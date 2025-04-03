@@ -215,6 +215,18 @@
       <label for="declaracion_consiento">Consiento el tratamiento de mis datos personales para las finalidades que impliquen esta solicitud.</label>
     </div>
   </div>
+  <div class="mb-3">
+    <label class="form-label">Términos y Condiciones</label>
+    <div>
+        <input type="checkbox" id="terminos_condiciones" v-model="form.terminosCondiciones" value="He leído y acepto los términos y condiciones.">
+        <label for="terminos_condiciones">He leído y acepto los términos y condiciones.</label>
+    </div>
+    <div>
+        <input type="checkbox" id="politica_privacidad" v-model="form.politicaPrivacidad" value="He leído y acepto la política de privacidad.">
+        <label for="politica_privacidad">He leído y acepto la política de privacidad.</label>
+    </div>
+</div>
+
             <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
         </form>
     </div>
@@ -229,33 +241,36 @@
   export default {
     name: 'FormularioComponent',
     data() {
-      return {
-        form: {
-          nombre: '',
-          cedula: '',
-          correo: '',
-          telefono: '',
-          relacion: '',
-          relacionRadio: '',
-          tipoSolicitud: '',
-          motivosAcceso: '',
-          motivosAccesoOtro: '',
-          motivosRectificacion: '',
-          motivosRectificacionOtro: '',
-          motivosCancelacion: '',
-          motivosCancelacionOtro: '',
-          motivosOposicion: '',
-          motivosOposicionOtro: '',
-          motivosPortabilidad: '',
-          motivosPortabilidadOtro: '',
-          documentacionAdjunta: [],
-          documentacionSoporte: '',
-          detallesSolicitud: '',
-          declaracion: [],
-        },
-        submitted: false
-      };
+  return {
+    form: {
+      nombre: '',
+      cedula: '',
+      correo: '',
+      telefono: '',
+      relacion: '',
+      relacionRadio: '',
+      tipoSolicitud: '',
+      motivosAcceso: '',
+      motivosAccesoOtro: '',
+      motivosRectificacion: '',
+      motivosRectificacionOtro: '',
+      motivosCancelacion: '',
+      motivosCancelacionOtro: '',
+      motivosOposicion: '',
+      motivosOposicionOtro: '',
+      motivosPortabilidad: '',
+      motivosPortabilidadOtro: '',
+      documentacionAdjunta: [],
+      documentacionSoporte: '',
+      detallesSolicitud: '',
+      declaracion: [],
+      terminosCondiciones: false,
+      politicaPrivacidad: false,
     },
+    submitted: false
+  };
+},
+
     methods: {
       submitForm() {
         this.submitted = true;
